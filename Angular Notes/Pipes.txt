@@ -1,0 +1,67 @@
+pipes
+
+lowercase
+uppercase
+titlecase
+slice
+json
+
+number :
+percent
+
+currency : 'INR' : 'code'
+
+date : 'short'
+
+html
+
+{{myName | uppercase}}
+{{myName | lowercase}}
+{{myName | titlecase}}
+{{person | json}}
+{{myName | slice:3}}
+{{myName | slice:2:7}}
+
+
+ts
+
+myName = "sUsHMa";
+  person = {
+    "firstname" : "sushma",
+    "lastname" : "bonala"
+  }
+
+Number pipes
+
+html
+
+{{5.6789 | number : '2.3-7'}}
+{{5.6789 | number : '1.5-7'}}
+{{0.55 | percent}}
+
+
+currency pipes
+
+html
+
+{{450 | currency}}
+{{550 | currency : 'INR'}}
+{{550 | currency : 'INR' : 'code'}}
+
+
+date pipes
+
+ts
+
+date = new Date();
+
+
+html
+
+<h1>{{date}}</h1>
+<h1>{{date | date : 'short'}}</h1>
+<h1>{{date | date : 'shortDate'}}</h1>
+<h1>{{date | date : 'shortTime'}}</h1>
+
+
+

@@ -1,0 +1,23 @@
+
+ts
+
+name = "sushma";
+siteUrl = window.location.href;
+
+
+  loginUser(userName,Password){
+    console.log(userName + Password);
+  }
+
+
+
+html
+
+
+<h1>{{name}}</h1>
+<h2>{{2+2}}</h2>
+<h3>{{"welcome" + name}}</h3>
+<h4>{{name.length}}</h4>
+<h5>{{name.toUpperCase()}}</h5>
+<h6>{{loginUser("sush", "hello")}}</h6>
+<h1>{{siteUrl}}</h1>e.toUpperCase()}}</h5>

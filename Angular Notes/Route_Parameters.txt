@@ -1,0 +1,62 @@
+
+Route  -- route.navigate([url, input to url])
+
+ActivatedRoute  -- route.snapshot.parammap.get(key)
+
+/url:inputparam
+
+
+
+
+department-details-component.ts
+
+import { ActivatedRoute } from '@angular/router';
+
+ ngOnInit() {
+   this.id = this.route.snapshot.paramMap.get('id');
+  }
+
+department-details-component.html
+
+<p>
+  department-details works!
+</p>
+
+You have selected {{id}}
+
+
+
+departments-component.ts
+
+  departments = [
+    { id : 1, name : "Angular"},
+    { id : 2, name : "React"},
+    { id : 3, name : "Vue"}
+  ]
+  constructor(private route: Router) { }
+
+  ngOnInit() {
+  }
+
+  onselect(dep){
+    this.route.navigate(['/departments', dep.id]);
+  }
+}
+
+departments-component.html
+
+<div (click)= "onselect(dep)" *ngFor = "let dep of departments">
+<h1>{{dep.id}}. {{dep.name}}</h1>
+</div>
+
+
+app-routing.module.ts
+
+
+const routes: Routes = [
+  {path : '', redirectTo : "/departments", pathMatch : "full"},
+  {path : "departments", component : DepartmentsComponent},
+  {path : "departments/:id", component : DepartmentDetailsComponent},
+  {path : "employees", component : EmployeesComponent},
+  {path : "**", component : PageNotFoundComponent}
+];

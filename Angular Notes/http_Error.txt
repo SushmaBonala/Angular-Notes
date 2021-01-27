@@ -1,0 +1,10 @@
+
+
+import "rxjs/add/operator/catch";
+
+
+.catch(this.errorHandler);
+
+errorHandler(error : HttpErrorResponse){
+Observable.throw(error.message || "Service down");
+}

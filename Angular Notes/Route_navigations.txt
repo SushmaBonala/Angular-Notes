@@ -1,0 +1,24 @@
+
+{path : "", relativeTo : "/departments", pathmatch : full}
+{path : "departments", component : DepartmentsComponent, children : []}
+{path : "**", relativeTo : "/departments"}
+
+<router-outlet>
+
+route -- ActivatedRoute
+router -- Router
+
+route.snapshot.parammap.get('id');
+route.parammap.subscribe(
+(params : parammap) => this.id = parseInt(params.get('id'))
+)
+
+relative to using current url 
+this.router.navigate([dep.id], {relativeTo : this.route});
+this.router.navigate(["../", depId], {relativeTo : this.route});
+
+Route with /id
+this.router.navigate(["/departments", depId]);
+
+optionalRoute with ;id=1
+this.router.navigate(["/departments", {id : depId}]);

@@ -1,0 +1,17 @@
+
+-- to easily access dom elements
+
+it refers html element and all its dom properties
+
+ts
+
+ logMessage(msg){
+    console.log(msg);
+  }
+
+
+html
+
+<input type = "text" #myInput>
+<button (click) = "logMessage(myInput.value)">Log</button>
+<button (click) = "logMessage(myInput)">Log1</button>

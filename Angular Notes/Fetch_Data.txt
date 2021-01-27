@@ -1,0 +1,32 @@
+import httpclientmodule
+
+use http client 
+
+ts
+
+
+  ngOnInit() {
+   this.loginservice.getpersonData().subscribe(
+      (response) => this.persons = response);
+  }
+
+
+service.ts
+
+
+  url : string = "/assets/data/employees.json";
+  
+  constructor(private http : HttpClient ) { }
+
+  getpersonData() : Observable<[]>{
+    return this.http.get<[]>(this.url);
+  }
+
+html
+
+
+<div *ngFor = "let person of persons">
+<h1>{{person.firstName}}</h1>    
+<h1>{{person.lastName}}</h1>
+<h1>{{person.rollNo}}</h1>
+</div>

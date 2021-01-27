@@ -1,0 +1,31 @@
+
+
+property binding and event binding
+
+ngModel is used to achieve it
+
+import formsmodule from @angular/forms
+
+and add it in imports 
+
+
+
+app module .ts
+
+import { FormsModule } from '@angular/forms';
+ imports: [
+    BrowserModule,
+    FormsModule
+  ],
+
+
+ts
+
+name : "";
+
+
+
+html
+
+{{name}}
+<input type = "text" [(ngModel)]= "name">

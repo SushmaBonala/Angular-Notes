@@ -1,0 +1,13 @@
+
+html
+
+<div [ngSwitch] = "color">
+    <div *ngSwitchCase= "'red'">You picked red color</div>
+    <div *ngSwitchCase= "'yellow'">You picked yellow color</div>
+    <div *ngSwitchCase= "'white'">You picked white color</div>
+    <div *ngSwitchCase= "'green'">You picked green color</div>
+    <div *ngSwitchDefault>pick again</div>
+</div>
+
+ts
+  color = "blue";

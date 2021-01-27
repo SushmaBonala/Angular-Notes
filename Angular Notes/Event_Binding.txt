@@ -1,0 +1,27 @@
+
+[] -- data flows from component ts to html
+
+()  -- data flows from html to ts
+
+$ event - info on event like mouse event with its properties, it captures dom event
+
+
+
+
+
+ts
+
+
+greeting : "";
+
+greet(event){
+    console.log(event.type);
+    this.greeting = "Welcome";
+  }
+
+
+html
+
+{{greeting}}
+<button (click) = "greet($event)">Greet</button>
+<button (click) = "greeting = 'hello'">Greet1</button>

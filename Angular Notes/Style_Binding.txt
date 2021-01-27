@@ -1,0 +1,19 @@
+
+ts
+
+
+  hasError = false;
+  highlightColor = "yellow";
+  messageStyles = {
+    color : "blue",
+    fontStyle : "italic"
+  }
+
+
+html
+
+
+<h1 [style.color]="'orange'">Codevolution</h1>
+<h1 [style.color] = "hasError ? 'red' : 'green'">Codevolution</h1>
+<h1 [style.color] = "highlightColor">Codevolution</h1>
+<h1 [ngStyle]= "messageStyles">Codevolution</h1>

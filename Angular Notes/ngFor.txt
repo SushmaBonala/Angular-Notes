@@ -1,0 +1,26 @@
+
+let color of colors
+
+index as i 
+
+first as f
+
+last as l
+
+odd as o 
+
+even as e
+
+
+
+ts
+  
+colors = ["blue","green", "white"];
+
+
+html
+
+
+<div *ngFor = "let color of colors; index as i">
+   <h4>{{i}} {{color}}</h4>
+</div>

@@ -1,0 +1,21 @@
+
+structural directives
+
+add or remove html elements
+
+html
+
+<h1 *ngIf="true">Welcome {{name}}</h1>
+<h1 *ngIf="false">Welcome {{name}}</h1>
+<h1 *ngIf="display">Welcome {{name}}</h1>
+<h1 *ngIf="display; else elseBlock;">Hi {{name}}</h1>
+<h1 *ngIf="display; then thenBlock; else elseBlock;"></h1>
+<ng-template #elseBlock>Name is hidden</ng-template>
+<ng-template #thenBlock>Hello {{name}}</ng-template>
+
+ts
+
+display = true;
+
+
+

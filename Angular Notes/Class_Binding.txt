@@ -1,0 +1,41 @@
+
+[class]  -- property binding
+[class.className]  -- conditional class
+[ngClass] -- set of classes with conditions
+class and [class]  -- class becomes dummy and [class] will be applied
+
+css
+
+.text-danger{
+    color: red;
+}
+.text-success{
+    color: green;
+}
+.text-special{
+    font-style: italic;
+}
+
+
+ts
+
+  successClass = "text-success";
+  hasError = false;
+  isSpecial = true;
+  messageClasses = {
+    "text-danger" : this.hasError,
+    "text-success" : !this.hasError,
+    "text-special" : this.isSpecial
+  }
+
+
+
+html
+
+
+<h1 class = "text-success">Codevolution</h1>
+<h1 [class] = "successClass">Codevolution</h1>
+<h1 [class.text-danger] = "hasError">Codevolution</h1>
+<h1 class="text-danger" [class]= "successClass">Codevolution</h1>
+<h1 bind-class = "successClass">Codevolution</h1>
+<h1 [ngClass]= "messageClasses">Codevolution</h1>

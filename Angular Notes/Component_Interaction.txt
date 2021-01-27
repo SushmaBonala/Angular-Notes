@@ -1,0 +1,62 @@
+
+@Input  -- send data to component from appcomponent i.e., parent to child
+
+-- import input from @N
+
+@Output  -- data flows from child to parent using events
+
+-- import EventEmitter,output from @angular/core
+-- create a event using EventEmitter 
+
+app.component.ts
+
+ parentData = "sushma";
+
+
+
+app.component.html
+
+<app-login [name] = "parentData"></app-login>
+
+
+
+ts
+
+import { Component, Input, OnInit } from '@angular/core';
+
+ @Input("name") myName = "";
+
+
+
+
+html
+
+{{myName}}
+
+
+child component sends data to parent using events
+
+app.component.ts
+
+message = "";
+
+app.component.html
+
+<app-login [name] = "parentData" (childEvent)= "message=$event"></app-login>
+{{message}}
+
+
+ts
+
+import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
+@Output() childEvent = new EventEmitter();
+  
+ sendEvent(){
+  this.childEvent.emit("Hey Hello");
+ }
+
+
+
+html
+
+<button (click) = "sendEvent()">sendEvent</button>

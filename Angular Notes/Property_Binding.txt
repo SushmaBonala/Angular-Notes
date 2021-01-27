@@ -1,0 +1,39 @@
+
+Attribute vs property
+
+attribute  --- html
+property -- DOM
+
+Attribute value is intialised and cannot be changed
+property value will be updated on change
+
+$0.getAttribute('value')
+$0.value
+
+ts 
+
+myId ="testId"
+flag = true;
+
+
+html
+
+<input [id] = "myId" type = "text" >
+
+<input type="text" id = "{{myId}}" >
+
+<input type="text" id = "{{myId}}" [disabled] = "flag">
+
+<input type="text" id = "{{myId}}" disabled = "false">
+
+<input type="text" id = "{{myId}}" [disabled] = "false">
+
+<input type="text" id = "{{myId}}" disabled = "{{false}}">
+
+<input type="text" id = "{{myId}}" bind-disabled = "flag" >
+
+[] -- property binding
+
+{{ }} -- interpolation 
+
+interpolation is applicable only on strings

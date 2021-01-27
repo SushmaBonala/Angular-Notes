@@ -1,0 +1,30 @@
+use parammap over snapshot, it returns observable so subscibe and get parammap and get value
+
+
+department-details.component.ts
+
+  ngOnInit() {
+   this.route.paramMap.subscribe(
+     (params :ParamMap) => this.id= parseInt(params.get('id'))
+   );
+  }
+
+  goNext(){
+    let nextId = this.id+1;
+    this.router.navigate(["/departments",nextId]);
+  }
+
+  goPrevious(){
+    let previousId = this.id-1;
+    this.router.navigate(["/departments",previousId]);
+  }
+
+
+
+department-details.component.html
+
+
+You have selected {{id}}
+
+<a (click)= "goNext()">Next</a>
+<a (click)= "goPrevious()">Previous</a>
