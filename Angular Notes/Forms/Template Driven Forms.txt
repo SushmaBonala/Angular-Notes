@@ -1,0 +1,40 @@
+
+#userform -- its a template reference
+ngform -- angular 
+
+
+#userForm = "ngForm"  -- it assigns that form to userform
+
+ngModel to form fields like input -- it maps that to userform
+
+add name to fields for proper mapping
+
+[ngmodel]  -- to get values from ts 
+
+[(ngmodel)]  -- for two way data binding
+
+properties 
+-touched
+-untouched
+-dirty
+-pristine
+-valid
+-invalid
+
+
+automatically abblies above property named classes based on state
+
+
+apply class conditionally for validation 
+[class.is-invalid] = "name.touched && name.invalid"
+
+novalidate on form to skip validation
+
+add [disabled]="userform.form.valid" to disable submit button 
+
+ngsubmit = "method()" on form
+
+for dropdown user need to write on validation if there is default value if "" not required
+
+
+
